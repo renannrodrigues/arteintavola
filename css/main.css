@@ -1,0 +1,206 @@
+/* Google Fonts - DEVE VIR PRIMEIRO */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Tailwind Base */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply antialiased;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply font-sans text-gray-800 bg-tavola-cream;
+  }
+}
+
+/* ============================================
+   CUSTOM COMPONENTS
+   ============================================ */
+@layer components {
+  /* Buttons */
+  .btn-primary {
+    @apply inline-block bg-tavola-green text-white px-8 py-3 rounded-md font-semibold transition-all duration-300 hover:bg-tavola-green-dark hover:shadow-xl relative overflow-hidden;
+  }
+
+  .btn-outline {
+    @apply inline-block border-2 border-white text-white px-6 py-2 rounded-md font-medium transition-all duration-300 hover:bg-white hover:text-tavola-green;
+  }
+
+  .btn-secondary {
+    @apply inline-block bg-tavola-gold text-white px-8 py-3 rounded-md font-semibold transition-all duration-300 hover:bg-opacity-90 hover:shadow-lg;
+  }
+
+  /* Sections */
+  .section-padding {
+    @apply py-20 md:py-28;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    @apply relative min-h-screen flex items-center justify-center overflow-hidden;
+  }
+
+  .hero-video {
+    @apply absolute top-0 left-0 w-full h-full object-cover;
+  }
+
+  .hero-overlay {
+    @apply absolute inset-0 bg-gradient-to-br from-tavola-green/80 via-tavola-green/60 to-tavola-green-dark/80;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1;
+  }
+
+  .menu-item {
+    @apply bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
+  }
+
+  /* Form Elements */
+  .form-input {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-tavola-green focus:border-transparent transition-all;
+  }
+
+  .form-label {
+    @apply block text-gray-700 font-medium mb-2;
+  }
+
+  /* Reveal Animation */
+  .reveal {
+    @apply opacity-0 translate-y-8 transition-all duration-700;
+  }
+
+  .reveal.active {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+/* ============================================
+   CUSTOM UTILITIES
+   ============================================ */
+@layer utilities {
+  /* Text Shadows */
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Backdrop Blur Utilities */
+  .backdrop-blur-custom {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-tavola-green to-tavola-green-dark bg-clip-text text-transparent;
+  }
+}
+
+/* ============================================
+   RIPPLE EFFECT
+   ============================================ */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(0);
+  animation: ripple-animation 0.6s ease-out;
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* ============================================
+   SCROLLBAR CUSTOM
+   ============================================ */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8f6f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f4d3a;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #163528;
+}
+
+/* ============================================
+   LOADING ANIMATION
+   ============================================ */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  border: 3px solid rgba(31, 77, 58, 0.1);
+  border-left-color: #1f4d3a;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+/* ============================================
+   MOBILE MENU OVERLAY
+   ============================================ */
+.mobile-menu-overlay {
+  @apply fixed inset-0 bg-black/50 backdrop-blur-sm z-40;
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    @apply text-black bg-white;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus Visible for Keyboard Navigation */
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-tavola-green;
+}

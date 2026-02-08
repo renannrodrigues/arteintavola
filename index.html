@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Arte In Tavola - Restaurante de cozinha italiana contemporânea em Bento Gonçalves. Massas artesanais, vinhos e experiência gastronômica única.">
+  <meta name="keywords" content="restaurante italiano, Bento Gonçalves, massas artesanais, vinhos, Farina Park Hotel, Arte In Tavola">
+  
+  <title>Arte In Tavola - Cozinha Italiana Contemporânea</title>
+  
+  <link rel="icon" type="image/svg+xml" href="public/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans text-gray-800 bg-tavola-cream">
+
+  <!-- NAVIGATION -->
+  <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <a href="index.html" class="text-2xl md:text-3xl font-display font-bold text-white tracking-wide">
+          Arte In Tavola
+        </a>
+
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-white hover:text-tavola-gold transition-colors duration-300 border-b-2 border-tavola-gold">Home</a>
+          <a href="#sobre" class="text-white hover:text-tavola-gold transition-colors duration-300">Sobre</a>
+          <a href="cardapio.html" class="text-white hover:text-tavola-gold transition-colors duration-300">Cardápio</a>
+          <a href="#ambiente" class="text-white hover:text-tavola-gold transition-colors duration-300">Ambiente</a>
+          <a href="reservas.html" class="btn-outline">Reservar Mesa</a>
+        </div>
+
+        <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-64 bg-tavola-green transform translate-x-full transition-transform duration-300 md:hidden">
+    <div class="flex flex-col h-full">
+      <div class="flex items-center justify-between p-6 border-b border-tavola-green-light">
+        <span class="text-xl font-display font-bold text-white">Menu</span>
+        <button id="mobile-menu-close" class="text-white focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <nav class="flex-1 px-6 py-8 space-y-4">
+        <a href="index.html" class="block text-white text-lg hover:text-tavola-gold transition-colors border-l-4 border-tavola-gold pl-4">Home</a>
+        <a href="#sobre" class="block text-white text-lg hover:text-tavola-gold transition-colors">Sobre</a>
+        <a href="cardapio.html" class="block text-white text-lg hover:text-tavola-gold transition-colors">Cardápio</a>
+        <a href="#ambiente" class="block text-white text-lg hover:text-tavola-gold transition-colors">Ambiente</a>
+        <a href="reservas.html" class="block text-white text-lg hover:text-tavola-gold transition-colors">Reservar Mesa</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <!-- GIF de Fundo -->
+    <div class="hero-background">
+      <img src="public/img/hero-background.gif" alt="Background" class="hero-gif">
+    </div>
+    <div class="hero-overlay"></div>
+    
+    <div class="container mx-auto px-6 relative z-10 text-center">
+      <span class="text-tavola-gold text-sm font-semibold tracking-wider uppercase animate-slide-down">Farina Park Hotel</span>
+      <h1 class="text-5xl md:text-7xl font-display font-bold text-white mt-4 mb-6 text-shadow-lg animate-fade-in">
+        Arte In Tavola
+      </h1>
+      <p class="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto mb-8 animate-slide-up">
+        Cozinha italiana contemporânea em um ambiente sofisticado
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
+        <a href="cardapio.html" class="btn-primary">
+          Ver Cardápio
+        </a>
+        <a href="reservas.html" class="btn-secondary">
+          Reservar Mesa
+        </a>
+      </div>
+    </div>
+
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <a href="#sobre" class="text-white">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- SOBRE SECTION -->
+  <section id="sobre" class="section-padding bg-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <span class="text-tavola-gold text-sm font-semibold tracking-wider uppercase">Nossa História</span>
+          <h2 class="text-4xl md:text-5xl font-display font-bold text-gray-800 mt-4 mb-6">
+            Sobre o Arte In Tavola
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="reveal">
+            <img 
+              src="public/img/5.webp" 
+              alt="Arte In Tavola Logo" 
+              class="rounded-lg shadow-2xl w-full"
+            >
+          </div>
+          
+          <div class="reveal space-y-6">
+            <p class="text-lg text-gray-700 leading-relaxed">
+            <strong>Arte In Tavola</strong> é um restaurante que celebra a autêntica cozinha italiana com um toque contemporâneo.
+            </p>
+            
+            <p class="text-lg text-gray-700 leading-relaxed">
+              Nossa proposta é oferecer uma experiência gastronômica única, onde cada prato é cuidadosamente preparado com ingredientes selecionados e técnicas que respeitam a tradição italiana.
+            </p>
+            
+            <p class="text-lg text-gray-700 leading-relaxed">
+              Das <strong>massas frescas artesanais</strong> aos <strong>pratos principais</strong> sofisticados, cada receita conta uma história de paixão pela culinária e dedicação à excelência.
+            </p>
+
+            <div class="bg-tavola-cream p-6 rounded-lg">
+              <p class="text-tavola-red font-semibold text-lg italic">
+                "A arte de transformar ingredientes simples em experiências memoráveis"
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTAQUES DO CARDÁPIO -->
+  <section class="section-padding bg-tavola-cream">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="text-tavola-gold text-sm font-semibold tracking-wider uppercase">Sabores Autênticos</span>
+        <h2 class="text-4xl md:text-5xl font-display font-bold text-gray-800 mt-4 mb-6">
+          Destaques do Cardápio
+        </h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Conheça alguns dos nossos pratos mais apreciados
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="card reveal">
+          <div class="overflow-hidden">
+            <img 
+              src="public/img/1.webp" 
+              alt="Massas Artesanais" 
+              class="w-full h-64 object-cover hover:scale-110 transition-transform duration-500"
+            >
+          </div>
+          <div class="p-6">
+            <h3 class="text-2xl font-display font-semibold mb-3 text-gray-800">Massas Artesanais</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Ravioli, tortelloni e tagliarini feitos frescos diariamente com receitas tradicionais
+            </p>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="overflow-hidden">
+            <img 
+              src="public/img/2.webp" 
+              alt="Risotos Cremosos" 
+              class="w-full h-64 object-cover hover:scale-110 transition-transform duration-500"
+            >
+          </div>
+          <div class="p-6">
+            <h3 class="text-2xl font-display font-semibold mb-3 text-gray-800">Risotos Cremosos</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Preparados com arroz arbóreo e ingredientes premium como camarões e cogumelos frescos
+            </p>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="overflow-hidden">
+            <img 
+              src="public/img/3.webp" 
+              alt="Pratos Principais" 
+              class="w-full h-64 object-cover hover:scale-110 transition-transform duration-500"
+            >
+          </div>
+          <div class="p-6">
+            <h3 class="text-2xl font-display font-semibold mb-3 text-gray-800">Pratos Principais</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Salmão, cordeiro, ossobuco e outras especialidades preparadas com maestria
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="cardapio.html" class="btn-primary">
+          Ver Cardápio Completo
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMBIENTE -->
+  <section id="ambiente" class="section-padding bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="text-tavola-gold text-sm font-semibold tracking-wider uppercase">Nosso Espaço</span>
+        <h2 class="text-4xl md:text-5xl font-display font-bold text-gray-800 mt-4 mb-6">
+          Um Ambiente Acolhedor
+        </h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Sofisticação e conforto para momentos especiais
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div class="reveal">
+          <img 
+            src="public/img/4.webp" 
+            alt="Interior do Restaurante" 
+            class="rounded-lg shadow-xl w-full h-80 object-cover"
+          >
+        </div>
+        <div class="reveal">
+          <img 
+            src="public/img/5.webp" 
+            alt="Mesa preparada" 
+            class="rounded-lg shadow-xl w-full h-80 object-cover"
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION -->
+  <section class="section-padding bg-gradient-to-br from-tavola-green to-tavola-green-dark text-white">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl md:text-5xl font-display font-bold mb-6">
+        Reserve Sua Mesa
+      </h2>
+      <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+        Garanta uma experiência gastronômica inesquecível no coração de Bento Gonçalves
+      </p>
+      <p class="text-lg text-tavola-gold font-semibold mb-8">
+        ⚠️ Reservas são indispensáveis
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="reservas.html" class="inline-block bg-white text-tavola-green px-10 py-4 rounded-md font-semibold text-lg hover:bg-tavola-cream transition-all duration-300 hover:shadow-xl">
+          Fazer Reserva Online
+        </a>
+        <a href="https://wa.me/5554996350445" target="_blank" class="inline-block bg-tavola-gold text-white px-10 py-4 rounded-md font-semibold text-lg hover:bg-opacity-90 transition-all duration-300 hover:shadow-xl">
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-tavola-green-dark text-white">
+    <div class="container mx-auto px-6 py-16">
+      <div class="grid md:grid-cols-4 gap-8 mb-12">
+        <div>
+          <h3 class="text-2xl font-display font-bold mb-4">Arte In Tavola</h3>
+          <p class="text-white/80 leading-relaxed">
+            Cozinha italiana contemporânea em um ambiente sofisticado e acolhedor.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-white/80 hover:text-tavola-gold transition-colors">Home</a></li>
+            <li><a href="#sobre" class="text-white/80 hover:text-tavola-gold transition-colors">Sobre</a></li>
+            <li><a href="cardapio.html" class="text-white/80 hover:text-tavola-gold transition-colors">Cardápio</a></li>
+            <li><a href="reservas.html" class="text-white/80 hover:text-tavola-gold transition-colors">Reservas</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Contato para Reservas</h4>
+          <ul class="space-y-3 text-white/80">
+            <li>📍 Farina Park Hotel<br>Bento Gonçalves - RS</li>
+            <li>📞 (54) 99635-0445</li>
+            <li>✉️ contato@arteintavola.com.br</li>
+            <li class="text-xs italic text-tavola-gold mt-4">Reservas são indispensáveis</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Horário</h4>
+          <ul class="space-y-2 text-white/80">
+            <li>Segunda: Fechado</li>
+            <li>Terça a Domingo: 19h - 22h</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-white/20 pt-8 text-center text-white/60">
+        <p>&copy; 2024 Arte In Tavola. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
