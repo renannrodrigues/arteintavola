@@ -47,6 +47,14 @@
     @apply relative min-h-screen flex items-center justify-center overflow-hidden;
   }
 
+  .hero-background {
+    @apply absolute top-0 left-0 w-full h-full overflow-hidden;
+  }
+
+  .hero-gif {
+    @apply absolute top-0 left-0 w-full h-full object-cover;
+  }
+
   .hero-video {
     @apply absolute top-0 left-0 w-full h-full object-cover;
   }
@@ -61,7 +69,18 @@
   }
 
   .menu-item {
-    @apply bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
+    @apply bg-white rounded-2xl overflow-hidden transition-all duration-500;
+    transform: translateY(0);
+    box-shadow: 
+      0 10px 25px -5px rgba(0, 0, 0, 0.1),
+      0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .menu-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+      0 20px 40px -8px rgba(0, 0, 0, 0.15),
+      0 12px 20px -8px rgba(0, 0, 0, 0.1);
   }
 
   /* Form Elements */

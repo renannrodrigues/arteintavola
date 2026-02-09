@@ -113,7 +113,7 @@ const menuData = [
   },
   {
     category: 'massas',
-    name: 'Tortéi ao molho de provolone, manjerição e farofa de presunto Parma',
+    name: 'Tortéi ao molho de provolone, manjericão e farofa de presunto Parma',
     description: 'Tortellini with Provolone cheese, basil and Parma ham sauce',
     price: 'R$ 88,00',
     image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&h=400&fit=crop'
@@ -208,7 +208,24 @@ function filterMenu(category) {
 }
 
 // ============================================
-// RENDER MENU ITEMS
+// GET CATEGORY LABEL
+// ============================================
+function getCategoryLabel(category) {
+  const labels = {
+    'entradas': 'Entradas',
+    'saladas': 'Saladas',
+    'sopas': 'Sopas',
+    'risotos': 'Risotos',
+    'massas': 'Massas Frescas',
+    'principais': 'Principais',
+    'sobremesas': 'Sobremesas',
+    'adicionais': 'Adicionais'
+  }
+  return labels[category] || category
+}
+
+// ============================================
+// RENDER MENU ITEMS - VERSÃO CLEAN E ELEVADA
 // ============================================
 function renderMenuItems(items) {
   const menuGrid = document.getElementById('menu-grid')
@@ -220,21 +237,32 @@ function renderMenuItems(items) {
   
   setTimeout(() => {
     menuGrid.innerHTML = items.map(item => `
-      <div class="menu-item reveal">
-        <div class="overflow-hidden rounded-t-lg">
+      <div class="menu-item reveal group cursor-pointer">
+        <div class="relative overflow-hidden">
           <img 
             src="${item.image}" 
             alt="${item.name}"
-            class="w-full h-48 object-cover hover:scale-110 transition-transform duration-500"
+            class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500"
             loading="lazy"
           >
         </div>
-        <div class="p-4">
-          <div class="flex justify-between items-start mb-2">
-            <h3 class="text-xl font-display font-semibold text-gray-800">${item.name}</h3>
-            <span class="text-tavola-green font-semibold text-lg whitespace-nowrap ml-2">${item.price}</span>
+        <div class="p-6">
+          <div class="mb-2">
+            <span class="inline-block bg-tavola-green/10 text-tavola-green px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide">
+              ${getCategoryLabel(item.category)}
+            </span>
           </div>
-          <p class="text-gray-600 text-sm leading-relaxed">${item.description}</p>
+          <h3 class="text-lg font-display font-bold text-gray-800 mb-2 leading-tight">
+            ${item.name}
+          </h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">
+            ${item.description}
+          </p>
+          <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+            <span class="text-2xl font-bold text-tavola-green">
+              ${item.price}
+            </span>
+          </div>
         </div>
       </div>
     `).join('')
@@ -302,6 +330,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }, 100)
   
-  console.log('🍝 Página de Cardápio carregada!')
+  console.log('🍽 Página de Cardápio carregada!')
   console.log(`${menuData.length} itens no menu`)
 })
