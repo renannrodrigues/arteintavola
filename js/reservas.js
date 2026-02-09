@@ -22,7 +22,9 @@ const RESTAURANT_INFO = {
 // VALIDATE OPENING HOURS
 // ============================================
 function validateOpeningHours(date, time) {
-  const selectedDate = new Date(date)
+  // Parse date in local timezone to avoid offset issues
+  const [year, month, day] = date.split('-').map(Number)
+  const selectedDate = new Date(year, month - 1, day)
   const dayOfWeek = selectedDate.getDay() // 0 = Sunday, 1 = Monday, etc.
   
   // Check if closed on Monday
@@ -73,7 +75,8 @@ function validateForm(formData) {
   }
   
   // Validate date
-  const selectedDate = new Date(formData.date)
+  const [year, month, day] = formData.date.split('-').map(Number)
+  const selectedDate = new Date(year, month - 1, day)
   const today = new Date()
   today.setHours(0, 0, 0, 0)
   
@@ -129,8 +132,10 @@ function showSuccess(formData) {
   const successModal = document.getElementById('success-modal')
   const overlay = document.getElementById('modal-overlay')
   
-  // Format date
-  const date = new Date(formData.date)
+  // Format date correctly in local timezone
+  const [year, month, day] = formData.date.split('-').map(Number)
+  const date = new Date(year, month - 1, day)
+  
   const formattedDate = date.toLocaleDateString('pt-BR', {
     weekday: 'long',
     year: 'numeric',
@@ -189,7 +194,10 @@ function setMinDate() {
 // SEND WHATSAPP MESSAGE
 // ============================================
 function sendWhatsAppNotification(formData) {
-  const date = new Date(formData.date)
+  // Parse date correctly in local timezone
+  const [year, month, day] = formData.date.split('-').map(Number)
+  const date = new Date(year, month - 1, day)
+  
   const formattedDate = date.toLocaleDateString('pt-BR', {
     weekday: 'long',
     day: '2-digit',
@@ -278,7 +286,9 @@ function setupDatePicker() {
   
   if (dateInput) {
     dateInput.addEventListener('input', (e) => {
-      const selectedDate = new Date(e.target.value)
+      // Parse date in local timezone
+      const [year, month, day] = e.target.value.split('-').map(Number)
+      const selectedDate = new Date(year, month - 1, day)
       const dayOfWeek = selectedDate.getDay()
       
       // If Monday is selected, show warning
