@@ -2,7 +2,6 @@
 // ARTE IN TAVOLA - Cardápio à La Carte JavaScript
 // ============================================
 
-import '../css/style.css'
 import { initMobileMenu, initStickyNav, initSmoothScroll } from './main.js'
 
 // ============================================
