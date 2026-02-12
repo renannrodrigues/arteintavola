@@ -1,9 +1,10 @@
 // ============================================
-// ARTE IN TAVOLA - Cardápio JavaScript
+// ARTE IN TAVOLA - Cardápio à La Carte JavaScript
 // ============================================
 
 import '../css/style.css'
 import { initMobileMenu, initStickyNav, initSmoothScroll } from './main.js'
+
 // ============================================
 // MENU DATA - ARTE IN TAVOLA
 // ============================================
@@ -225,7 +226,7 @@ function getCategoryLabel(category) {
 }
 
 // ============================================
-// RENDER MENU ITEMS - VERSÃO CLEAN E ELEVADA
+// RENDER MENU ITEMS - ESTILO BOX COM IMAGEM
 // ============================================
 function renderMenuItems(items) {
   const menuGrid = document.getElementById('menu-grid')
@@ -237,31 +238,35 @@ function renderMenuItems(items) {
   
   setTimeout(() => {
     menuGrid.innerHTML = items.map(item => `
-      <div class="menu-item reveal group cursor-pointer">
-        <div class="relative overflow-hidden">
-          <img 
-            src="${item.image}" 
-            alt="${item.name}"
-            class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500"
-            loading="lazy"
-          >
-        </div>
-        <div class="p-6">
-          <div class="mb-2">
-            <span class="inline-block bg-tavola-green/10 text-tavola-green px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide">
-              ${getCategoryLabel(item.category)}
-            </span>
+      <div class="reveal">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-full flex flex-col">
+          <!-- Imagem -->
+          <div class="relative h-56 overflow-hidden">
+            <img 
+              src="${item.image}" 
+              alt="${item.name}"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+            <div class="absolute top-4 left-4">
+              <span class="inline-block bg-tavola-green/90 text-white px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide shadow-lg">
+                ${getCategoryLabel(item.category)}
+              </span>
+            </div>
           </div>
-          <h3 class="text-lg font-display font-bold text-gray-800 mb-2 leading-tight">
-            ${item.name}
-          </h3>
-          <p class="text-gray-600 text-sm leading-relaxed mb-4">
-            ${item.description}
-          </p>
-          <div class="flex items-center justify-between pt-3 border-t border-gray-100">
-            <span class="text-2xl font-bold text-tavola-green">
-              ${item.price}
-            </span>
+          
+          <!-- Conteúdo -->
+          <div class="p-6 flex-grow flex flex-col">
+            <h3 class="text-xl font-display font-bold text-tavola-green mb-3 leading-tight">
+              ${item.name}
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-4 flex-grow">
+              ${item.description}
+            </p>
+            <div class="pt-4 border-t border-gray-200">
+              <span class="text-3xl font-bold text-tavola-green">
+                ${item.price}
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -330,6 +335,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }, 100)
   
-  console.log('🍽 Página de Cardápio carregada!')
+  console.log('🍽 Página de Cardápio à La Carte carregada!')
   console.log(`${menuData.length} itens no menu`)
 })

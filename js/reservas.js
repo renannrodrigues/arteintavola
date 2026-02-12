@@ -4,6 +4,7 @@
 
 import '../css/style.css'
 import { initMobileMenu, initStickyNav, initSmoothScroll } from './main.js'
+
 // ============================================
 // RESTAURANT INFO
 // ============================================
@@ -12,10 +13,70 @@ const RESTAURANT_INFO = {
   whatsappNumber: '5554996350445',
   openDays: ['tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'],
   closedDay: 'monday',
-  openingTime: '19:00',
-  closingTime: '22:00',
+  // Horários específicos permitidos
+  allowedTimes: ['19:00', '19:15', '19:30', '19:45', '20:00', '20:15', '20:30'],
   minGuests: 1,
-  maxGuests: 20
+  maxGuests: 20,
+  maxChildren: 10
+}
+
+// ============================================
+// POPULATE TIME SELECT
+// ============================================
+function populateTimeSelect() {
+  const timeSelect = document.getElementById('time')
+  
+  if (timeSelect) {
+    // Limpar opções existentes
+    timeSelect.innerHTML = '<option value="">Selecione o horário</option>'
+    
+    // Adicionar horários permitidos
+    RESTAURANT_INFO.allowedTimes.forEach(time => {
+      const option = document.createElement('option')
+      option.value = time
+      option.textContent = time
+      timeSelect.appendChild(option)
+    })
+  }
+}
+
+// ============================================
+// HANDLE CHILDREN COUNT CHANGE
+// ============================================
+function handleChildrenCountChange() {
+  const childrenCount = parseInt(document.getElementById('children-count').value) || 0
+  const childrenAgesContainer = document.getElementById('children-ages-container')
+  const childrenAgesInputs = document.getElementById('children-ages-inputs')
+  
+  if (childrenCount > 0) {
+    childrenAgesContainer.classList.remove('hidden')
+    
+    // Criar inputs para idade das crianças
+    childrenAgesInputs.innerHTML = ''
+    
+    for (let i = 0; i < childrenCount; i++) {
+      const ageInput = document.createElement('div')
+      ageInput.className = 'flex items-center gap-3'
+      ageInput.innerHTML = `
+        <label class="text-sm font-medium text-gray-700 w-32">Criança ${i + 1}:</label>
+        <input 
+          type="number" 
+          id="child-age-${i}"
+          name="child-age-${i}"
+          min="0" 
+          max="17" 
+          placeholder="Idade"
+          class="form-input flex-1"
+          required
+        />
+        <span class="text-xs text-gray-500">anos</span>
+      `
+      childrenAgesInputs.appendChild(ageInput)
+    }
+  } else {
+    childrenAgesContainer.classList.add('hidden')
+    childrenAgesInputs.innerHTML = ''
+  }
 }
 
 // ============================================
@@ -35,22 +96,11 @@ function validateOpeningHours(date, time) {
     }
   }
   
-  // Validate time
-  if (time) {
-    const [hours, minutes] = time.split(':').map(Number)
-    const selectedTime = hours * 60 + minutes
-    
-    const [openHour, openMin] = RESTAURANT_INFO.openingTime.split(':').map(Number)
-    const [closeHour, closeMin] = RESTAURANT_INFO.closingTime.split(':').map(Number)
-    
-    const openTime = openHour * 60 + openMin
-    const closeTime = closeHour * 60 + closeMin
-    
-    if (selectedTime < openTime || selectedTime > closeTime) {
-      return {
-        valid: false,
-        message: `Horário de funcionamento: ${RESTAURANT_INFO.openingTime} às ${RESTAURANT_INFO.closingTime}`
-      }
+  // Validate time is in allowed times
+  if (time && !RESTAURANT_INFO.allowedTimes.includes(time)) {
+    return {
+      valid: false,
+      message: `Por favor, selecione um dos horários disponíveis: ${RESTAURANT_INFO.allowedTimes.join(', ')}`
     }
   }
   
@@ -74,7 +124,7 @@ function validateForm(formData) {
     errors.push('Telefone inválido. Por favor, digite um número válido.')
   }
   
-  // Validate date
+  // Validate date - permite reservas até hoje
   const [year, month, day] = formData.date.split('-').map(Number)
   const selectedDate = new Date(year, month - 1, day)
   const today = new Date()
@@ -96,9 +146,32 @@ function validateForm(formData) {
   }
   
   // Validate guests
-  if (formData.guests < RESTAURANT_INFO.minGuests || formData.guests > RESTAURANT_INFO.maxGuests) {
-    errors.push(`Número de pessoas deve ser entre ${RESTAURANT_INFO.minGuests} e ${RESTAURANT_INFO.maxGuests}`)
+  const totalGuests = formData.adults + formData.children
+  if (totalGuests < RESTAURANT_INFO.minGuests || totalGuests > RESTAURANT_INFO.maxGuests) {
+    errors.push(`Número total de pessoas deve ser entre ${RESTAURANT_INFO.minGuests} e ${RESTAURANT_INFO.maxGuests}`)
   }
+  
+  // Validate adults
+  if (formData.adults < 1) {
+    errors.push('Deve haver pelo menos 1 adulto')
+  }
+  
+  // Validate children count
+  if (formData.children > RESTAURANT_INFO.maxChildren) {
+    errors.push(`Número máximo de crianças: ${RESTAURANT_INFO.maxChildren}`)
+  }
+  
+  // Validate children ages
+  if (formData.children > 0 && formData.childrenAges.length !== formData.children) {
+    errors.push('Por favor, informe a idade de todas as crianças')
+  }
+  
+  // Validate each child age
+  formData.childrenAges.forEach((age, index) => {
+    if (age < 0 || age > 17) {
+      errors.push(`Idade da criança ${index + 1} deve estar entre 0 e 17 anos`)
+    }
+  })
   
   return errors
 }
@@ -147,7 +220,13 @@ function showSuccess(formData) {
   document.getElementById('success-name').textContent = formData.name
   document.getElementById('success-date').textContent = formattedDate
   document.getElementById('success-time').textContent = formData.time
-  document.getElementById('success-guests').textContent = formData.guests
+  
+  // Formatação de pessoas (adultos + crianças)
+  let guestsText = `${formData.adults} adulto${formData.adults > 1 ? 's' : ''}`
+  if (formData.children > 0) {
+    guestsText += ` e ${formData.children} criança${formData.children > 1 ? 's' : ''}`
+  }
+  document.getElementById('success-guests').textContent = guestsText
   
   // Show modal
   successModal.classList.remove('hidden')
@@ -205,13 +284,23 @@ function sendWhatsAppNotification(formData) {
     year: 'numeric'
   })
   
-  const message = `🍝 *NOVA RESERVA - Arte in Tavola*
+  // Formatação de pessoas
+  let guestsText = `${formData.adults} adulto${formData.adults > 1 ? 's' : ''}`
+  if (formData.children > 0) {
+    guestsText += ` e ${formData.children} criança${formData.children > 1 ? 's' : ''}`
+    
+    // Adicionar idades das crianças
+    const agesText = formData.childrenAges.map((age, idx) => `Criança ${idx + 1}: ${age} anos`).join(', ')
+    guestsText += ` (${agesText})`
+  }
+  
+  const message = `🍽 *NOVA RESERVA - Arte in Tavola*
 
 👤 *Nome:* ${formData.name}
 📞 *Telefone:* ${formData.phone}
 📅 *Data:* ${formattedDate}
 🕐 *Horário:* ${formData.time}
-👥 *Pessoas:* ${formData.guests}
+👥 *Pessoas:* ${guestsText}
 ${formData.notes ? `\n📝 *Observações:*\n${formData.notes}` : ''}
 
 _Reserva realizada através do site_`
@@ -229,12 +318,26 @@ function handleFormSubmit(e) {
   e.preventDefault()
   
   const form = e.target
+  
+  // Coletar idades das crianças
+  const childrenCount = parseInt(form['children-count'].value) || 0
+  const childrenAges = []
+  
+  for (let i = 0; i < childrenCount; i++) {
+    const ageInput = form[`child-age-${i}`]
+    if (ageInput) {
+      childrenAges.push(parseInt(ageInput.value))
+    }
+  }
+  
   const formData = {
     name: form.name.value,
     phone: form.phone.value,
     date: form.date.value,
     time: form.time.value,
-    guests: parseInt(form.guests.value),
+    adults: parseInt(form.adults.value),
+    children: childrenCount,
+    childrenAges: childrenAges,
     notes: form.notes.value
   }
   
@@ -271,6 +374,7 @@ function handleFormSubmit(e) {
     
     // Reset form
     form.reset()
+    handleChildrenCountChange() // Hide children ages
     
     // Log data (for debugging)
     console.log('📋 Reserva processada:', formData)
@@ -301,20 +405,6 @@ function setupDatePicker() {
 }
 
 // ============================================
-// SETUP TIME PICKER WITH VALID HOURS
-// ============================================
-function setupTimePicker() {
-  const timeInput = document.getElementById('time')
-  
-  if (timeInput) {
-    // Set min and max time
-    timeInput.setAttribute('min', RESTAURANT_INFO.openingTime)
-    timeInput.setAttribute('max', RESTAURANT_INFO.closingTime)
-    timeInput.setAttribute('step', '1800') // 30 minutes intervals
-  }
-}
-
-// ============================================
 // INITIALIZE RESERVATIONS PAGE
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -323,19 +413,25 @@ document.addEventListener('DOMContentLoaded', () => {
   initStickyNav()
   initSmoothScroll()
   
-  // Set minimum date
+  // Set minimum date (allows today)
   setMinDate()
+  
+  // Populate time select with specific times
+  populateTimeSelect()
   
   // Setup date picker
   setupDatePicker()
-  
-  // Setup time picker
-  setupTimePicker()
   
   // Phone formatting
   const phoneInput = document.getElementById('phone')
   if (phoneInput) {
     phoneInput.addEventListener('input', (e) => formatPhone(e.target))
+  }
+  
+  // Children count change
+  const childrenCountInput = document.getElementById('children-count')
+  if (childrenCountInput) {
+    childrenCountInput.addEventListener('change', handleChildrenCountChange)
   }
   
   // Form submission
@@ -364,6 +460,6 @@ document.addEventListener('DOMContentLoaded', () => {
   })
   
   console.log('📅 Página de Reservas - Arte in Tavola')
-  console.log(`📍 Horário: ${RESTAURANT_INFO.openingTime} às ${RESTAURANT_INFO.closingTime}`)
+  console.log(`🕐 Horários disponíveis: ${RESTAURANT_INFO.allowedTimes.join(', ')}`)
   console.log('🚫 Fechado às segundas-feiras')
 })

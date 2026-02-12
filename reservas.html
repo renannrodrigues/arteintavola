@@ -13,6 +13,18 @@
 </head>
 <body class="font-sans text-gray-800 bg-tavola-cream">
 
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a 
+    href="https://wa.me/5554996350445" 
+    target="_blank"
+    class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 animate-bounce-slow"
+    aria-label="Fale conosco no WhatsApp"
+  >
+    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.130-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+  </a>
+
   <!-- NAVIGATION -->
   <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-tavola-green shadow-lg">
     <div class="container mx-auto px-6 py-4">
@@ -24,8 +36,24 @@
         <div class="hidden md:flex items-center space-x-8">
           <a href="index.html" class="text-white hover:text-tavola-gold transition-colors duration-300">Home</a>
           <a href="index.html#sobre" class="text-white hover:text-tavola-gold transition-colors duration-300">Sobre</a>
-          <a href="cardapio.html" class="text-white hover:text-tavola-gold transition-colors duration-300">Cardápio</a>
+          <div class="relative group">
+            <button class="text-white hover:text-tavola-gold transition-colors duration-300 flex items-center gap-1">
+              Cardápio
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              <a href="cardapio-alacarte.html" class="block px-6 py-3 text-tavola-green hover:bg-tavola-cream transition-colors border-b border-gray-100">Cardápio à La Carte</a>
+              <a href="cardapio-degustacao.html" class="block px-6 py-3 text-tavola-green hover:bg-tavola-cream transition-colors">Menu Degustação</a>
+            </div>
+          </div>
           <a href="index.html#ambiente" class="text-white hover:text-tavola-gold transition-colors duration-300">Ambiente</a>
+          <a href="https://www.instagram.com/arteintavolarestaurante/" target="_blank" class="text-white hover:text-tavola-gold transition-colors duration-300 flex items-center gap-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
           <a href="reservas.html" class="btn-outline border-b-2 border-tavola-gold">Reservar Mesa</a>
         </div>
 
@@ -52,8 +80,15 @@
       <nav class="flex-1 px-6 py-8 space-y-4">
         <a href="index.html" class="block text-white text-lg hover:text-tavola-gold transition-colors">Home</a>
         <a href="index.html#sobre" class="block text-white text-lg hover:text-tavola-gold transition-colors">Sobre</a>
-        <a href="cardapio.html" class="block text-white text-lg hover:text-tavola-gold transition-colors">Cardápio</a>
+        <a href="cardapio-alacarte.html" class="block text-white text-lg hover:text-tavola-gold transition-colors">Cardápio à La Carte</a>
+        <a href="cardapio-degustacao.html" class="block text-white text-lg hover:text-tavola-gold transition-colors">Menu Degustação</a>
         <a href="index.html#ambiente" class="block text-white text-lg hover:text-tavola-gold transition-colors">Ambiente</a>
+        <a href="https://www.instagram.com/arteintavolarestaurante/" target="_blank" class="block text-white text-lg hover:text-tavola-gold transition-colors flex items-center gap-2">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          Instagram
+        </a>
         <a href="reservas.html" class="block text-white text-lg hover:text-tavola-gold transition-colors border-l-4 border-tavola-gold pl-4">Reservar Mesa</a>
       </nav>
     </div>
@@ -105,6 +140,9 @@
                     <li class="font-semibold text-red-600">Segunda-feira: Fechado</li>
                     <li>Terça a Domingo: 19h às 22h</li>
                   </ul>
+                  <p class="text-xs text-tavola-green font-semibold mt-2">
+                    Horários disponíveis: 19:00, 19:15, 19:30, 19:45, 20:00, 20:15, 20:30
+                  </p>
                 </div>
               </div>
 
@@ -118,54 +156,40 @@
                 <div>
                   <h3 class="font-semibold text-tavola-green mb-2">Localização</h3>
                   <p class="text-gray-600 text-sm">
-                    Farina Park Hotel<br>
-                    Bento Gonçalves - RS
+                    RS-453, Km 106<br>
+                    (divisa Bento Gonçalves e Garibaldi)<br>
+                    R. Via dos Imigrantes, RS<br>
+                    CEP: 95181-899
                   </p>
                 </div>
               </div>
 
               <div class="flex items-start">
                 <div class="flex-shrink-0 w-12 h-12 bg-tavola-green/10 rounded-full flex items-center justify-center mr-4">
-                  <svg class="w-6 h-6 text-tavola-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                  <svg class="w-6 h-6 text-tavola-green" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.130-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                   </svg>
                 </div>
                 <div>
-                  <h3 class="font-semibold text-tavola-green mb-2">Capacidade</h3>
+                  <h3 class="font-semibold text-tavola-green mb-2">Contato</h3>
                   <p class="text-gray-600 text-sm">
-                    Acomodamos grupos de 1 a 20 pessoas.<br>
-                    <span class="text-tavola-red font-semibold">Reservas são indispensáveis.</span>
+                    WhatsApp: (54) 99635-0445<br>
+                    <a href="mailto:reservas@arteintavola.com.br" class="text-tavola-green hover:underline">reservas@arteintavola.com.br</a>
                   </p>
-                </div>
-              </div>
-
-              <div class="flex items-start">
-                <div class="flex-shrink-0 w-12 h-12 bg-tavola-green/10 rounded-full flex items-center justify-center mr-4">
-                  <svg class="w-6 h-6 text-tavola-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="font-semibold text-tavola-green mb-2">Contato Direto</h3>
-                  <p class="text-gray-600 text-sm mb-2">
-                    Dúvidas? Entre em contato:
-                  </p>
-                  <p class="text-tavola-green font-semibold text-lg">(54) 99635-0445</p>
-                  <p class="text-gray-600 text-sm"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5e2e2c37333f283b2c3f1e383f2c37303f2e3f2c3536312a3b32703d3133703c2c">[email&#160;protected]</a></p>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Form Section -->
-          <div class="reveal" style="animation-delay: 0.2s;">
-            <div class="bg-white rounded-lg shadow-xl p-8">
-              <h2 class="text-2xl font-display font-bold text-tavola-green mb-6">
-                Dados da Reserva
-              </h2>
+          <div class="reveal">
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+              <h3 class="text-2xl font-display font-bold text-tavola-green mb-6">
+                Preencha seus Dados
+              </h3>
 
               <!-- Error Messages -->
-              <div id="error-messages" class="hidden mb-4"></div>
+              <div id="error-messages" class="hidden mb-6"></div>
 
               <form id="reservation-form" class="space-y-6">
                 <!-- Nome -->
@@ -190,11 +214,11 @@
                     name="phone" 
                     required
                     class="form-input"
-                    placeholder="(54) 99999-9999"
+                    placeholder="(00) 00000-0000"
                   >
                 </div>
 
-                <!-- Data e Horário -->
+                <!-- Data e Hora -->
                 <div class="grid grid-cols-2 gap-4">
                   <div>
                     <label for="date" class="form-label">Data *</label>
@@ -205,7 +229,6 @@
                       required
                       class="form-input"
                     >
-                    <p class="text-xs text-red-600 mt-1">Fechado às segundas</p>
                   </div>
                   <div>
                     <label for="time" class="form-label">Horário *</label>
@@ -216,40 +239,72 @@
                       class="form-input"
                     >
                       <option value="">Selecione</option>
-                      <option value="19:00">19:00</option>
-                      <option value="19:30">19:30</option>
-                      <option value="20:00">20:00</option>
-                      <option value="20:30">20:30</option>
-                      <option value="21:00">21:00</option>
-                      <option value="21:30">21:30</option>
-                      <option value="22:00">22:00</option>
+                      <!-- Os horários serão populados via JavaScript -->
                     </select>
                   </div>
                 </div>
 
-                <!-- Número de Pessoas -->
+                <!-- Número de Adultos -->
                 <div>
-                  <label for="guests" class="form-label">Número de Pessoas *</label>
+                  <label for="adults" class="form-label">Número de Adultos *</label>
                   <select 
-                    id="guests" 
-                    name="guests" 
+                    id="adults" 
+                    name="adults" 
                     required
                     class="form-input"
                   >
                     <option value="">Selecione</option>
-                    <option value="1">1 pessoa</option>
-                    <option value="2">2 pessoas</option>
-                    <option value="3">3 pessoas</option>
-                    <option value="4">4 pessoas</option>
-                    <option value="5">5 pessoas</option>
-                    <option value="6">6 pessoas</option>
-                    <option value="7">7 pessoas</option>
-                    <option value="8">8 pessoas</option>
-                    <option value="9">9 pessoas</option>
-                    <option value="10">10 pessoas</option>
-                    <option value="15">11-15 pessoas</option>
-                    <option value="20">16-20 pessoas</option>
+                    <option value="1">1 adulto</option>
+                    <option value="2">2 adultos</option>
+                    <option value="3">3 adultos</option>
+                    <option value="4">4 adultos</option>
+                    <option value="5">5 adultos</option>
+                    <option value="6">6 adultos</option>
+                    <option value="7">7 adultos</option>
+                    <option value="8">8 adultos</option>
+                    <option value="9">9 adultos</option>
+                    <option value="10">10 adultos</option>
+                    <option value="11">11 adultos</option>
+                    <option value="12">12 adultos</option>
+                    <option value="13">13 adultos</option>
+                    <option value="14">14 adultos</option>
+                    <option value="15">15 adultos</option>
+                    <option value="16">16 adultos</option>
+                    <option value="17">17 adultos</option>
+                    <option value="18">18 adultos</option>
+                    <option value="19">19 adultos</option>
+                    <option value="20">20 adultos</option>
                   </select>
+                </div>
+
+                <!-- Número de Crianças -->
+                <div>
+                  <label for="children-count" class="form-label">Número de Crianças (0-17 anos)</label>
+                  <select 
+                    id="children-count" 
+                    name="children-count"
+                    class="form-input"
+                  >
+                    <option value="0">Nenhuma criança</option>
+                    <option value="1">1 criança</option>
+                    <option value="2">2 crianças</option>
+                    <option value="3">3 crianças</option>
+                    <option value="4">4 crianças</option>
+                    <option value="5">5 crianças</option>
+                    <option value="6">6 crianças</option>
+                    <option value="7">7 crianças</option>
+                    <option value="8">8 crianças</option>
+                    <option value="9">9 crianças</option>
+                    <option value="10">10 crianças</option>
+                  </select>
+                </div>
+
+                <!-- Idades das Crianças (aparece dinamicamente) -->
+                <div id="children-ages-container" class="hidden">
+                  <label class="form-label mb-3 block">Idade das Crianças *</label>
+                  <div id="children-ages-inputs" class="space-y-3">
+                    <!-- Inputs de idade serão inseridos aqui via JavaScript -->
+                  </div>
                 </div>
 
                 <!-- Observações -->
@@ -324,9 +379,19 @@
       <div class="grid md:grid-cols-4 gap-8 mb-12">
         <div>
           <h3 class="text-2xl font-display font-bold mb-4">Arte In Tavola</h3>
-          <p class="text-white/80 leading-relaxed">
+          <p class="text-white/80 leading-relaxed mb-4">
             Cozinha italiana contemporânea em um ambiente sofisticado e acolhedor.
           </p>
+          <a 
+            href="https://www.instagram.com/arteintavolarestaurante/" 
+            target="_blank"
+            class="inline-flex items-center gap-2 text-white/80 hover:text-tavola-gold transition-colors"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            @arteintavolarestaurante
+          </a>
         </div>
 
         <div>
@@ -334,17 +399,18 @@
           <ul class="space-y-2">
             <li><a href="index.html" class="text-white/80 hover:text-tavola-gold transition-colors">Home</a></li>
             <li><a href="index.html#sobre" class="text-white/80 hover:text-tavola-gold transition-colors">Sobre</a></li>
-            <li><a href="cardapio.html" class="text-white/80 hover:text-tavola-gold transition-colors">Cardápio</a></li>
+            <li><a href="cardapio-alacarte.html" class="text-white/80 hover:text-tavola-gold transition-colors">Cardápio à La Carte</a></li>
+            <li><a href="cardapio-degustacao.html" class="text-white/80 hover:text-tavola-gold transition-colors">Menu Degustação</a></li>
             <li><a href="reservas.html" class="text-white/80 hover:text-tavola-gold transition-colors">Reservas</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="text-lg font-semibold mb-4">Contato para Reservas</h4>
+          <h4 class="text-lg font-semibold mb-4">Contato e Localização</h4>
           <ul class="space-y-3 text-white/80">
-            <li>📍 Farina Park Hotel<br>Bento Gonçalves - RS</li>
+            <li>📍 RS-453, Km 106<br>(divisa Bento Gonçalves e Garibaldi)<br>R. Via dos Imigrantes, RS<br>95181-899</li>
             <li>📞 (54) 99635-0445</li>
-            <li>✉️ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f282809b9f9384978093b29493809b9c93829380999a9d86979edc919d9fdc9080">[email&#160;protected]</a></li>
+            <li>✉️ <a href="mailto:reservas@arteintavola.com.br" class="hover:text-tavola-gold transition-colors">reservas@arteintavola.com.br</a></li>
             <li class="text-xs italic text-tavola-gold mt-4">Reservas são indispensáveis</li>
           </ul>
         </div>
@@ -359,12 +425,11 @@
       </div>
 
       <div class="border-t border-white/20 pt-8 text-center text-white/60">
-        <p>&copy; 2024 Arte In Tavola. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Arte In Tavola - Todos os direitos reservados</p>
       </div>
     </div>
   </footer>
 
-  <!-- SCRIPT -->
   <script type="module" src="js/reservas.js"></script>
 </body>
 </html>

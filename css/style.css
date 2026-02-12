@@ -114,6 +114,20 @@
   .gradient-text {
     @apply bg-gradient-to-r from-tavola-green to-tavola-green-dark bg-clip-text text-transparent;
   }
+
+  /* WhatsApp Button Slow Bounce Animation */
+  .animate-bounce-slow {
+    animation: bounce-slow 3s ease-in-out infinite;
+  }
+
+  @keyframes bounce-slow {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
 }
 
 /* ============================================

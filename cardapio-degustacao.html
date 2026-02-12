@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Menu Degustação do Arte In Tavola - Uma experiência gastronômica completa com entrada, prato principal e sobremesa.">
+  <meta name="keywords" content="menu degustação, experiência gastronômica, Arte In Tavola, Farina Park Hotel">
+  
+  <title>Menu Degustação - Arte In Tavola</title>
+  
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans text-gray-800 bg-tavola-cream">
+
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a 
+    href="https://wa.me/5554996350445" 
+    target="_blank"
+    class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 animate-bounce-slow"
+    aria-label="Fale conosco no WhatsApp"
+  >
+    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.130-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+  </a>
+
+  <!-- NAVIGATION -->
+  <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-tavola-green shadow-lg">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <a href="index.html" class="text-2xl md:text-3xl font-display font-bold text-white tracking-wide">
+          Arte In Tavola
+        </a>
+
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-white hover:text-tavola-gold transition-colors duration-300">Home</a>
+          <a href="index.html#sobre" class="text-white hover:text-tavola-gold transition-colors duration-300">Sobre</a>
+          <div class="relative group">
+            <button class="text-white hover:text-tavola-gold transition-colors duration-300 border-b-2 border-tavola-gold flex items-center gap-1">
+              Cardápio
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              <a href="cardapio-alacarte.html" class="block px-6 py-3 text-tavola-green hover:bg-tavola-cream transition-colors border-b border-gray-100">Cardápio à La Carte</a>
+              <a href="cardapio-degustacao.html" class="block px-6 py-3 text-tavola-green hover:bg-tavola-cream transition-colors">Menu Degustação</a>
+            </div>
+          </div>
+          <a href="index.html#ambiente" class="text-white hover:text-tavola-gold transition-colors duration-300">Ambiente</a>
+          <a href="https://www.instagram.com/arteintavolarestaurante/" target="_blank" class="text-white hover:text-tavola-gold transition-colors duration-300 flex items-center gap-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+          <a href="reservas.html" class="btn-outline">Reservar Mesa</a>
+        </div>
+
+        <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-64 bg-tavola-green transform translate-x-full transition-transform duration-300 md:hidden">
+    <div class="flex flex-col h-full">
+      <div class="flex items-center justify-between p-6 border-b border-tavola-green-light">
+        <span class="text-xl font-display font-bold text-white">Menu</span>
+        <button id="mobile-menu-close" class="text-white focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <nav class="flex-1 px-6 py-8 space-y-4">
+        <a href="index.html" class="block text-white text-lg hover:text-tavola-gold transition-colors">Home</a>
+        <a href="index.html#sobre" class="block text-white text-lg hover:text-tavola-gold transition-colors">Sobre</a>
+        <a href="cardapio-alacarte.html" class="block text-white text-lg hover:text-tavola-gold transition-colors">Cardápio à La Carte</a>
+        <a href="cardapio-degustacao.html" class="block text-white text-lg hover:text-tavola-gold transition-colors border-l-4 border-tavola-gold pl-4">Menu Degustação</a>
+        <a href="index.html#ambiente" class="block text-white text-lg hover:text-tavola-gold transition-colors">Ambiente</a>
+        <a href="https://www.instagram.com/arteintavolarestaurante/" target="_blank" class="block text-white text-lg hover:text-tavola-gold transition-colors flex items-center gap-2">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          Instagram
+        </a>
+        <a href="reservas.html" class="block text-white text-lg hover:text-tavola-gold transition-colors">Reservar Mesa</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="relative pt-32 pb-20 bg-gradient-to-br from-tavola-green to-tavola-green-dark text-white overflow-hidden">
+    <div class="absolute top-0 left-0 w-64 h-64 bg-tavola-gold/10 rounded-full -translate-x-32 -translate-y-32"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-tavola-gold/5 rounded-full translate-x-48 translate-y-48"></div>
+    
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="text-tavola-gold text-sm font-semibold tracking-wider uppercase animate-slide-down">Experiência Completa</span>
+        <h1 class="text-5xl md:text-6xl font-display font-bold mt-4 mb-6 animate-fade-in">
+          Menu Degustação
+        </h1>
+        <p class="text-xl text-white/90 max-w-2xl mx-auto animate-slide-up">
+          Uma seleção especial que proporciona uma experiência única ao seu paladar
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU DEGUSTAÇÃO CONTENT -->
+  <section class="section-padding bg-white">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto">
+        
+        <!-- Texto Introdutório -->
+        <div class="text-center mb-16 reveal">
+          <p class="text-lg text-gray-600 leading-relaxed italic">
+            Os sabores inconfundíveis do Arte in Tavola, em uma seleção especial para você. 
+            Nosso cardápio para degustação conta com sensações que irão provocar uma 
+            experiência única ao seu paladar. Nossos pratos ficam ainda melhores com a 
+            harmonização de vinhos.
+          </p>
+          <p class="text-2xl font-display font-bold text-tavola-green mt-6">
+            Viva esse momento!
+          </p>
+        </div>
+
+        <!-- Entrada -->
+        <div class="mb-12 reveal">
+          <div class="bg-tavola-green/90 backdrop-blur-md rounded-2xl p-8 md:p-10 shadow-2xl">
+            <h2 class="text-3xl font-display font-bold text-tavola-gold mb-4 text-center">
+              Entrada:
+            </h2>
+            <h3 class="text-2xl font-display font-semibold text-white mb-4 text-center italic">
+              Bala de massa folhada
+            </h3>
+            <p class="text-lg text-white leading-relaxed text-center">
+              recheada com cogumelo Paris fresco, presunto tipo Parma ao toque de mostarda Dijon, 
+              creme aos quatro queijos e mix de folhas com tahine, azeite de oliva, mel, balsâmico, 
+              confit de tomates cereja e lascas de parmesão.
+            </p>
+          </div>
+        </div>
+
+        <!-- Prato Principal -->
+        <div class="mb-12 reveal">
+          <div class="bg-tavola-green/90 backdrop-blur-md rounded-2xl p-8 md:p-10 shadow-2xl">
+            <h2 class="text-3xl font-display font-bold text-tavola-gold mb-6 text-center">
+              Prato principal:
+            </h2>
+            
+            <div class="space-y-6">
+              <div>
+                <h3 class="text-2xl font-display font-semibold text-white mb-3 text-center italic">
+                  Salmão em crosta de gergelim
+                </h3>
+                <p class="text-lg text-white leading-relaxed text-center">
+                  ao molho de ervas finas com purê de batata baroa.
+                </p>
+              </div>
+
+              <div class="text-center">
+                <p class="text-2xl font-bold text-white my-4">ou</p>
+              </div>
+
+              <div>
+                <h3 class="text-2xl font-display font-semibold text-white mb-3 text-center italic">
+                  Ossobuco
+                </h3>
+                <p class="text-lg text-white leading-relaxed text-center">
+                  com risoto à la milanesa.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sobremesa -->
+        <div class="mb-16 reveal">
+          <div class="bg-tavola-green/90 backdrop-blur-md rounded-2xl p-8 md:p-10 shadow-2xl">
+            <h2 class="text-3xl font-display font-bold text-tavola-gold mb-4 text-center">
+              Sobremesa:
+            </h2>
+            <h3 class="text-2xl font-display font-semibold text-white text-center italic">
+              Crème brûlée
+            </h3>
+          </div>
+        </div>
+
+        <!-- Divisor Decorativo -->
+        <div class="flex items-center justify-center my-12">
+          <div class="flex-1 h-px bg-tavola-green"></div>
+          <div class="mx-4">
+            <svg class="w-6 h-6 text-tavola-green" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+          </div>
+          <div class="flex-1 h-px bg-tavola-green"></div>
+        </div>
+
+        <!-- Preços -->
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="reveal">
+            <div class="bg-tavola-cream rounded-2xl p-8 shadow-xl border-2 border-tavola-green text-center">
+              <h3 class="text-2xl font-display font-bold text-gray-700 mb-2 italic">
+                Menu Degustação:
+              </h3>
+              <p class="text-4xl font-bold text-tavola-green mb-2">R$ 160,00</p>
+              <p class="text-gray-600">por pessoa</p>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <div class="bg-tavola-gold/10 rounded-2xl p-8 shadow-xl border-2 border-tavola-gold text-center">
+              <h3 class="text-2xl font-display font-bold text-gray-700 mb-2 italic">
+                Harmonização:
+              </h3>
+              <p class="text-4xl font-bold text-tavola-gold mb-2">R$ 80,00</p>
+              <p class="text-gray-600">por pessoa</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Informação Harmonização -->
+        <div class="reveal">
+          <div class="bg-white rounded-2xl p-8 shadow-xl border-l-4 border-tavola-gold">
+            <p class="text-gray-700 leading-relaxed text-center">
+              Na opção com harmonização assinada por nosso sommelier exclusivo, <strong>Adriano da Silva</strong>, 
+              serão servidos 4 produtos de vinícolas locais selecionados especialmente para você: 
+              espumante brut, vinho rosé, vinho tinto e espumante moscatel. 200ml de cada.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA RESERVA -->
+  <section class="py-20 bg-tavola-green text-white">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-display font-bold mb-6">
+        Reserve sua Experiência
+      </h2>
+      <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+        Garanta sua mesa para viver essa experiência gastronômica única
+      </p>
+      <p class="text-lg text-tavola-gold font-semibold mb-8">
+        ⚠️ Reservas são indispensáveis
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="reservas.html" class="inline-block bg-white text-tavola-green px-10 py-4 rounded-md font-semibold text-lg hover:bg-tavola-cream transition-all duration-300 hover:shadow-xl">
+          Fazer Reserva Online
+        </a>
+        <a href="https://wa.me/5554996350445" target="_blank" class="inline-block bg-tavola-gold text-white px-10 py-4 rounded-md font-semibold text-lg hover:bg-opacity-90 transition-all duration-300 hover:shadow-xl">
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-tavola-green-dark text-white">
+    <div class="container mx-auto px-6 py-16">
+      <div class="grid md:grid-cols-4 gap-8 mb-12">
+        <div>
+          <h3 class="text-2xl font-display font-bold mb-4">Arte In Tavola</h3>
+          <p class="text-white/80 leading-relaxed mb-4">
+            Cozinha italiana contemporânea em um ambiente sofisticado e acolhedor.
+          </p>
+          <a 
+            href="https://www.instagram.com/arteintavolarestaurante/" 
+            target="_blank"
+            class="inline-flex items-center gap-2 text-white/80 hover:text-tavola-gold transition-colors"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            @arteintavolarestaurante
+          </a>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-white/80 hover:text-tavola-gold transition-colors">Home</a></li>
+            <li><a href="index.html#sobre" class="text-white/80 hover:text-tavola-gold transition-colors">Sobre</a></li>
+            <li><a href="cardapio-alacarte.html" class="text-white/80 hover:text-tavola-gold transition-colors">Cardápio à La Carte</a></li>
+            <li><a href="cardapio-degustacao.html" class="text-white/80 hover:text-tavola-gold transition-colors">Menu Degustação</a></li>
+            <li><a href="reservas.html" class="text-white/80 hover:text-tavola-gold transition-colors">Reservas</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Contato e Localização</h4>
+          <ul class="space-y-3 text-white/80">
+            <li>📍 RS-453, Km 106<br>(divisa Bento Gonçalves e Garibaldi)<br>R. Via dos Imigrantes, RS<br>95181-899</li>
+            <li>📞 (54) 99635-0445</li>
+            <li>✉️ <a href="mailto:arteintavola@farinaparkhotel.com.br" class="hover:text-tavola-gold transition-colors">arteintavola@farinaparkhotel.com.br</a></li>
+            <li class="text-xs italic text-tavola-gold mt-4">Reservas são indispensáveis</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Horário</h4>
+          <ul class="space-y-2 text-white/80">
+            <li>Segunda: Fechado</li>
+            <li>Terça a Domingo: 19h - 22h</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-white/20 pt-8 text-center text-white/60">
+        <p>&copy; 2026 Arte In Tavola. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
