@@ -2,7 +2,8 @@
 export default {
   content: [
     "./index.html",
-    "./cardapio.html",
+    "./cardapio-alacarte.html",
+    "./cardapio-degustacao.html",
     "./reservas.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],

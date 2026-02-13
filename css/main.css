@@ -59,8 +59,9 @@
     @apply absolute top-0 left-0 w-full h-full object-cover;
   }
 
+  /* OVERLAY ATUALIZADO - Mais claro e branco */
   .hero-overlay {
-    @apply absolute inset-0 bg-gradient-to-br from-tavola-green/80 via-tavola-green/60 to-tavola-green-dark/80;
+    @apply absolute inset-0 bg-gradient-to-br from-white/20 via-gray-100/15 to-gray-200/25;
   }
 
   /* Cards */
